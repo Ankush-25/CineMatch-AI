@@ -141,9 +141,9 @@ Provide exactly 5 movie recommendations that match the user's preference.`;
         console.log(result);
 
         const columns = result[0].columns;
-        const recommendations = result[0].values.map((row) => {
+        const recommendations = result[0].values.map((row: any[]) => {
           const obj: Record<string, unknown> = {};
-          columns.forEach((col, i) => {
+          columns.forEach((col: string, i: number) => {
             obj[col] = row[i];
           });
           return {
